@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+    <h1>Home</h1>
+    <p>Welcome to this website. There are currently <strong>{{ post_count }}</strong> posts to discover.</p>
+    <h2>My latest post:</h2>
+    <article>
+        <a href="{% url 'posts:page' slug=latest_post.slug %}">
+            <img 
+                src="{{ latest_post.banner.url }}"
+                alt="{{ latest_post.title }}"
+            />
+            <h2>
+                {{ latest_post.title }} 
+            </h2>
+        </a>
+        <p class="date">{{ latest_post.date }}</p>
+        <p>{{ latest_post.teaser }}</p>
+    </article>
+    <div class="cta">
+        <h2>Test</h2>
+        <p>Test call!</p>
+        <button>Test CTA</button>
+    </div>
+{% endblock %}

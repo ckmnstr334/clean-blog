@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{ post.title }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ post.title }}</h1>
+    <article>
+        <img 
+            src="{{ post.banner.url }}"
+            alt="{{post.title}}"
+        />
+        {% if post.copyright %}
+            <p class="copyright">© {{post.copyright}}</p>
+        {% endif %}
+        <p class="date">{{ post.date }}</p>
+        {% if post.category.title != None %}
+            <div class="cat-btn">{{ post.category.title }}</div>
+        {% endif %}
+        <p>{{post.body | safe | linebreaks }}</p>
+    </article>
+    <div class="cta">
+        <h2>Test</h2>
+        <p>Test call!</p>
+        <button>Test CTA</button>
+    </div>
+    <h2>You might also like:</h2>
+    <div class="box">
+      {% for related in related_posts %}
+        <a href="{% url 'posts:page' slug=related.slug %}">
+        <img class="list-img" src="{{ related.banner.url }}" alt="{{ related.title }}">
+        <h3>{{ related.title }}</h3>
+        </a>
+      {% empty %}
+        <p>Keine ähnlichen Artikel gefunden.</p>
+      {% endfor %}
+    </div>
+{% endblock %}

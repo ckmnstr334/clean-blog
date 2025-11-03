@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            Blog
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'js/main.js' %}" defer></script>
+</head>
+<body>
+    <div class="nav">
+        <a href="{% url 'home' %}">Home</a> -
+        <a href="{% url 'posts:list' %}">Posts</a> -
+        <a href="{% url 'about' %}">About</a>
+    </div>
+    <div class="main">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div class="bottom">
+        <a href="#">
+            <img class="social" src="{% static 'github.svg' %}">
+        </a>
+        <a href="#">
+            <img class="social" src="{% static 'reddit.svg' %}">
+        </a>
+        <a href="#">
+            <img class="social" src="{% static 'linkedin.svg' %}">
+        </a>
+    </div>
+    <div class="footer">
+        <a href="{% url 'impress' %}">Impress</a> -
+        <a href="{% url 'privacy' %}">Privacy</a>
+    </div>
+</body>
+</html>
