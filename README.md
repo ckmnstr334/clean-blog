@@ -5,10 +5,12 @@ This django blog is simple and responsive.
 
 Requires python, django, pillow and django-filer(recommended).
 
-Steps:
-1. pip install python
-2. pip install django
-3. python manage.py makemigrations
-4. python manage.py migrate
-5. place a fallback.png image in blog/media (or change models.py accordingly)
-6. python manage.py runserver# clean-django-blog
+Steps beforehand:
+1. cmd: pip install python
+2. cmd: pip install django
+3. cmd: pip install Pillow
+4. cmd: python manage.py makemigrations
+5. cmd: python manage.py migrate
+6. place a fallback.png image in blog/media (or change models.py accordingly)
+7. cmd: python manage.py runserver
+8. create first post in admin
