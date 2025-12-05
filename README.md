@@ -13,4 +13,5 @@ Steps beforehand:
 5. cmd: python manage.py migrate
 6. place a fallback.png image in blog/media (or change models.py accordingly)
 7. cmd: python manage.py runserver
-8. create first post in admin
+8. create first post in admin (you'll get an error loading the homepage before you do)
+9. Done!
